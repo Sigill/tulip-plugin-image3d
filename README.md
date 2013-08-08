@@ -20,12 +20,41 @@ Note: ITK must be built with position independent code (-fpic option for GCC) an
 
 ## Use
 
-The _Load*_ plugins will load the data from an image in a property from an existing graph (created with the Grid3D plugin). All plugins uses the following parameters:
+### Image import plugins
+
+* _Import image as color_
+* _Import image as double_
+* _Import image as integer_
+* _Import image as doubleVector_
+* _Import image as integerVector_
+
+All plugins uses the following parameters:
+
+* _file::Image_: The path of the source image.
+* _Connectivity_: StringCollection indicating the connectivity of the graph ("0", "4" or "8").
+* _Positionning_: Boolean indicating if the nodes should be positionned in space.
+* _Spacing_: Double indicating the space between each nodes.
+
+The _Import image as color_ plugin will use the _viewColor_ property. For the others, you can specify which property to use with the _Property name_ parameter.
+
+The _Import image as color_ plugin also uses the _Convert to grayscale_ boolean parameter to tell if the image should be converted to grayscale.
+
+### Image loading plugins
+
+* _Load color property from image_
+* _Load double property from image_
+* _Load integer property from image_
+* _Load doubleVector property from image_
+* _Load integerVector property from image_
+* _Load mask as selection from image_
+* _Load mask as double property from image_
+
+All plugins will load the data from an image in a property from an existing graph (created with the Grid3D plugin). All plugins uses the following parameters:
 
 * _file::Image_: The path of the source image.
 * _Property_: The property to use.
 
-The LoadColorPropertyFromImage also uses the following parameter:
+The _Load color property from image_ also uses the following parameter:
 
 * _Convert to grayscale_: boolean indicating if a color image should be converted to grayscale.
 

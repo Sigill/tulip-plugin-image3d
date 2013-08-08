@@ -37,7 +37,7 @@ class LoadIntegerVectorPropertyFromImage: public tlp::Algorithm {
 	tlp::IntegerVectorProperty *property;
 
 public:
-	PLUGININFORMATIONS("Load integervector property from image", "Cyrille FAUCHEUX", "2013-08-01", "", "1.0", "Image")
+	PLUGININFORMATIONS("Load integerVector property from image", "Cyrille FAUCHEUX", "2013-08-01", "", "1.0", "Image")
 
 	LoadIntegerVectorPropertyFromImage(const tlp::PluginContext *context):
 		tlp::Algorithm(context)

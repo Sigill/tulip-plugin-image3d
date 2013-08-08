@@ -37,7 +37,7 @@ class LoadDoubleVectorPropertyFromImage: public tlp::Algorithm {
 	tlp::DoubleVectorProperty *property;
 
 public:
-	PLUGININFORMATIONS("Load doublevector property from image", "Cyrille FAUCHEUX", "2013-08-01", "", "1.0", "Image")
+	PLUGININFORMATIONS("Load doubleVector property from image", "Cyrille FAUCHEUX", "2013-08-01", "", "1.0", "Image")
 
 	LoadDoubleVectorPropertyFromImage(const tlp::PluginContext *context):
 		tlp::Algorithm(context)

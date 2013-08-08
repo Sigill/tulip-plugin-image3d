@@ -16,7 +16,12 @@ FOREACH(l
 		LoadIntegerPropertyFromImage
 		LoadIntegerVectorPropertyFromImage
 		LoadMaskAsSelectionFromImage
-		LoadMaskDoublePropertyFromImage)
+		LoadMaskDoublePropertyFromImage
+		ImportImageAsDoubleVectorProperty
+		ImportImageAsIntegerVectorProperty
+		ImportImageAsColor
+		ImportImageAsDoubleProperty
+		ImportImageAsIntegerProperty)
 	SET(PLUGIN_NAME "${l}-${TULIP_VERSION}")
 
 	ADD_LIBRARY(${PLUGIN_NAME} SHARED ${l}.cpp)
