@@ -31,29 +31,36 @@ const char *paramHelp[] = {
 		HTML_HELP_BODY()
 		"The image to import."
 		HTML_HELP_CLOSE(),
-	// 1 Connectivity
+	// 1 Neighborhood radius
 	HTML_HELP_OPEN()
-		HTML_HELP_DEF("Type", "StringCollection")
-		HTML_HELP_DEF("Values", "0;4;8")
+		HTML_HELP_DEF("Type", "Double")
 		HTML_HELP_DEF("Default", "0")
 		HTML_HELP_BODY()
-		"Pixel connectivity with surrounding pixels."
+		"The radius of the generated neighborhood (this is not affected by the Spacing parameter)."
 		HTML_HELP_CLOSE(),
-	// 2 Positionning
+	// 2 Neighborhood type
+	HTML_HELP_OPEN()
+		HTML_HELP_DEF("type", "String")
+		HTML_HELP_DEF("Values", "Circular;Square")
+		HTML_HELP_DEF("Default", "Circular")
+		HTML_HELP_BODY()
+		"The type of neighborhood to build."
+		HTML_HELP_CLOSE(),
+	// 3 Positionning
 	HTML_HELP_OPEN()
 		HTML_HELP_DEF("Type", "Boolean")
 		HTML_HELP_DEF("Default", "true")
 		HTML_HELP_BODY()
 		"This parameter indicates if the nodes should be positionned in space."
 		HTML_HELP_CLOSE(),
-	// 3 Spacing
+	// 4 Spacing
 	HTML_HELP_OPEN()
 		HTML_HELP_DEF("Type", "Double")
 		HTML_HELP_DEF("Default", "1.0")
 		HTML_HELP_BODY()
 		"Space between adjacent pixels."
 		HTML_HELP_CLOSE(),
-	// 4 Property name
+	// 5 Property name
 	HTML_HELP_OPEN()
 		HTML_HELP_DEF("Type", "String")
 		HTML_HELP_DEF("Default", "data")
@@ -70,13 +77,14 @@ public:
 	ImportImageAsInteger(PluginContext *context) :
 		ImportModule(context)
 	{
-		addDependency("Grid 3D", "1.0");
+		addDependency("Grid 3D", "1.1");
 
-		addInParameter< std::string >          ("file::File",    paramHelp[0], "");
-		addInParameter< tlp::StringCollection >("Connectivity",  paramHelp[1], "0;4;8");
-		addInParameter< bool >                 ("Positionning",  paramHelp[2], "true");
-		addInParameter< double >               ("Spacing",       paramHelp[3], "1.0");
-		addInParameter< std::string >          ("Property name", paramHelp[4], "data");
+		addInParameter< std::string >          ("file::File",          paramHelp[0], "");
+		addInParameter< double >               ("Neighborhood radius", paramHelp[2], "0");
+		addInParameter< tlp::StringCollection >("Neighborhood type",   paramHelp[1], "Circular;Square");
+		addInParameter< bool >                 ("Positionning",        paramHelp[3], "true");
+		addInParameter< double >               ("Spacing",             paramHelp[4], "1.0");
+		addInParameter< std::string >          ("Property name",       paramHelp[5], "data");
 	}
 	~ImportImageAsInteger() {}
 
