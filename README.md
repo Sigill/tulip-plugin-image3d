@@ -20,43 +20,26 @@ Note: ITK must be built with position independent code (-fpic option for GCC) an
 
 ## Use
 
-### Image import plugins
+### Image import plugin
 
-* _Import image as color_
-* _Import image as double_
-* _Import image as integer_
-* _Import image as doubleVector_
-* _Import image as integerVector_
+Name: **Import image**.
 
-All plugins uses the following parameters:
+* **file::Image**: String, the path of the source image.
+* **Neighborhood type**: StringCollection, the type of neighborhood to build (Circular, Square).
+* **Neighborhood radius**: Double, the radius of the neighborhood.
+* **Positionning**: Boolean, indicates if the nodes should be positionned in space.
+* **Spacing**: Double, the space between each nodes.
+* **Property type**: StringCollection, the type of the property that will store the pixel's data. Color, Integer, Double, IntegerVector, DoubleVector or Boolean.
+* **Property name**: String, the name of the property to create.
+* **Convert to grayscale**: Boolean, indicates if a Color property should be converted to grayscale.
 
-* _file::Image_: The path of the source image.
-* _Connectivity_: StringCollection indicating the connectivity of the graph ("0", "4" or "8").
-* _Positionning_: Boolean indicating if the nodes should be positionned in space.
-* _Spacing_: Double indicating the space between each nodes.
+### Image loading plugin
 
-The _Import image as color_ plugin will use the _viewColor_ property. For the others, you can specify which property to use with the _Property name_ parameter.
+Name: **Load image data**.
 
-The _Import image as color_ plugin also uses the _Convert to grayscale_ boolean parameter to tell if the image should be converted to grayscale.
-
-### Image loading plugins
-
-* _Load color property from image_
-* _Load double property from image_
-* _Load integer property from image_
-* _Load doubleVector property from image_
-* _Load integerVector property from image_
-* _Load mask as selection from image_
-* _Load mask as double property from image_
-
-All plugins will load the data from an image in a property from an existing graph (created with the Grid3D plugin). All plugins uses the following parameters:
-
-* _file::Image_: The path of the source image.
-* _Property_: The property to use.
-
-The _Load color property from image_ also uses the following parameter:
-
-* _Convert to grayscale_: boolean indicating if a color image should be converted to grayscale.
+* **file::Image**: The path of the source image.
+* **Property**: The property to use.
+* **Convert to grayscale**: Boolean, indicates if a Color property should be converted to grayscale.
 
 ## LICENSE
 

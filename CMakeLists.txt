@@ -10,18 +10,8 @@ FIND_PACKAGE(ITK REQUIRED COMPONENTS ITKCommon ITKIOImageBase ITKIOMeta ITKIOPNG
 INCLUDE(${ITK_USE_FILE})
 
 FOREACH(l
-		LoadColorPropertyFromImage
-		LoadDoublePropertyFromImage
-		LoadDoubleVectorPropertyFromImage
-		LoadIntegerPropertyFromImage
-		LoadIntegerVectorPropertyFromImage
-		LoadMaskAsSelectionFromImage
-		LoadMaskDoublePropertyFromImage
-		ImportImageAsDoubleVectorProperty
-		ImportImageAsIntegerVectorProperty
-		ImportImageAsColor
-		ImportImageAsDoubleProperty
-		ImportImageAsIntegerProperty)
+		LoadImageData
+		ImportImage)
 	SET(PLUGIN_NAME "${l}-${TULIP_VERSION}")
 
 	ADD_LIBRARY(${PLUGIN_NAME} SHARED ${l}.cpp)
