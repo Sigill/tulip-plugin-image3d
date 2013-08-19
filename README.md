@@ -24,6 +24,7 @@ Note: ITK must be built with position independent code (-fpic option for GCC) an
 
 Name: **Import image**.
 
+Parameters:
 * **file::Image**: String, the path of the source image.
 * **Neighborhood type**: StringCollection, the type of neighborhood to build (Circular, Square).
 * **Neighborhood radius**: Double, the radius of the neighborhood.
@@ -37,9 +38,19 @@ Name: **Import image**.
 
 Name: **Load image data**.
 
+Parameters:
 * **file::Image**: The path of the source image.
 * **Property**: The property to use.
 * **Convert to grayscale**: Boolean, indicates if a Color property should be converted to grayscale.
+
+## Export image plugin
+
+Name: **Export image**.
+
+Parameters:
+* **Property**: The property to export (Color or Boolean).
+* **dir::Export directory**: The directory in which tthe image(s) will be created.
+* **Export pattern**: The pattern that will be used to create the filenames. For image formats that doesn't support 3D, use printf-like tokens to specify a numerical index ("%06d").
 
 ## LICENSE
 

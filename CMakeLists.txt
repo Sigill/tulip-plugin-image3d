@@ -11,7 +11,8 @@ INCLUDE(${ITK_USE_FILE})
 
 FOREACH(l
 		LoadImageData
-		ImportImage)
+		ImportImage
+		ExportImage)
 	SET(PLUGIN_NAME "${l}-${TULIP_VERSION}")
 
 	ADD_LIBRARY(${PLUGIN_NAME} SHARED ${l}.cpp)
