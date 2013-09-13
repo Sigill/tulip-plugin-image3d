@@ -106,7 +106,7 @@ public:
 				throw std::runtime_error("Unable to get the image dimensions from the graph. Make sure it has been created by the \"Image 3D\" import plugin");
 
 			if(export_dir.empty()) {
-				std::stringstream e; e << "The \"file::Export directory\" parameter cannot be empty";
+				std::stringstream e; e << "The \"dir::Export directory\" parameter cannot be empty";
 				throw std::runtime_error(e.str());
 			}
 
